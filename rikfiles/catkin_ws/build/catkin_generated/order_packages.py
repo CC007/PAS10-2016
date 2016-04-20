@@ -2,4 +2,4 @@
 source_root_dir = "/home/student/catkin_ws/rikfiles/catkin_ws/src"
 whitelisted_packages = "".split(';') if "" != "" else []
 blacklisted_packages = "".split(';') if "" != "" else []
-underlay_workspaces = "/home/student/sudo/ros/catkin_ws/devel;/opt/ros/indigo".split(';') if "/home/student/sudo/ros/catkin_ws/devel;/opt/ros/indigo" != "" else []
+underlay_workspaces = "/home/student/catkin_ws/rikfiles/catkin_ws/devel;/home/student/sudo/ros/catkin_ws/devel;/opt/ros/indigo".split(';') if "/home/student/catkin_ws/rikfiles/catkin_ws/devel;/home/student/sudo/ros/catkin_ws/devel;/opt/ros/indigo" != "" else []
