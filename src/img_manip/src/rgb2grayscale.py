@@ -33,14 +33,10 @@ def conversion(req):
     req_cv = convert_image_cv(req.img_rgb)
     
     #grayscale
-    print "converting .. "
     gray_cv = cv2.cvtColor(req_cv, cv2.COLOR_RGB2GRAY )
-    print "done converting"
     
     #to ros img and return
     gray = convert_image_ros(gray_cv)
-    #req.img_gray = gray
-
     return rgb2grayResponse(gray)
     
 

@@ -109,6 +109,7 @@ catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES img_manip
   CATKIN_DEPENDS roscpp rospy message_runtime
+  actionlib_msgs
 #  DEPENDS system_lib
 )
 
