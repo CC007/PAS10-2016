@@ -40,6 +40,12 @@ def callback(data):
 
     #result form actionserver
     print "\[T]/: " + str(client.get_result().nPixels)
+
+
+    #publish grey image for the console
+    pub = rospy.Publisher('/img_manip/result_gray', Image, queue_size=100)
+    pub.publish(gray_img)
+
     
 def img_listener():
     # The anonymous=True flag means that rospy will choose a unique
