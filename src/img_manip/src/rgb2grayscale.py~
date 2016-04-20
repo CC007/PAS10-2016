@@ -1,0 +1,54 @@
+#!/usr/bin/env python
+import rospy
+from sensor_msgs.msg import Image
+#from srv import rgb2gray
+from cv_bridge import CvBridge, CvBridgeError
+import cv2
+import numpy
+
+##convert from sensor_msg format to opencv format (Numpy)
+def convert_image_cv(data, type = "bgr8"):
+    #use type = "8UC1" for grayscale images
+    try:
+        cv_image = bridge.imgmsg_to_cv2(data, type)
+        #use brgr8 if its a color image
+    except CvBridgeError, e:
+        print e
+    ###show image
+    #cv_iamge = numpy.asarray(cv_image)
+    #cv2.imshow("Camera image", cv_image)
+    #cv2.waitKey(1)
+    
+    return cv_image
+    
+#convert from opencv format to sensor_msg format (Numpy)
+def convert_image_ros(data, type = "bgr8"):
+    #use type = "8UC1" for grayscale images
+    try:
+        cv_image = bridge.cv2_to_imgmsg(data, type) 
+    except CvBridgeError, e:
+        print e
+    return ros_image
+
+#we assume the requirement is correctly passed to this function
+def conversion(req):
+    #to cv img
+    req_cv = convert_image_cv(req)
+    
+    #grayscale
+    gray_cv = cv2.cvtColor(req_cv, cv2.COLOR_RGB2GRAY )
+    
+    #to ros img and return
+    gray = convert_image_ros(gray_cv)
+    return rgb2grayResponse(gray)
+    
+
+def conversion_server():
+    rospy.init_node('conversion_server')
+    s = rospy.Service('gray_conversion', rgb2gray, conversion)
+    print "Ready to convert an image."
+    rospy.spin()
+    
+if __name__ == '__main__':
+    bridge = CvBridge()
+    conversion_server()

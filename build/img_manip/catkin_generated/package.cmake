@@ -1,0 +1,7 @@
+set(_CATKIN_CURRENT_PACKAGE "img_manip")
+set(img_manip_MAINTAINER "student <student@todo.todo>")
+set(img_manip_DEPRECATED "")
+set(img_manip_VERSION "0.0.0")
+set(img_manip_BUILD_DEPENDS "roscpp" "rospy" "actionlib" "actionlib_msgs" "message_generation")
+set(img_manip_RUN_DEPENDS "roscpp" "rospy" "message_runtime" "actionlib" "actionlib_msgs")
+set(img_manip_BUILDTOOL_DEPENDS "catkin")

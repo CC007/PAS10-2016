@@ -1,0 +1,10 @@
+#please look at the correct definition of Image. how is it imported in action files
+#goal
+sensor_msgs.msg/Image img_rgb
+sensor_msgs.msg/Image img_gray
+---
+#result
+uint32 nPixels
+---
+#feedback message
+uint32 n_progress

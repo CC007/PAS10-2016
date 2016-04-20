@@ -1,0 +1,2 @@
+beginner_tutorial:beginner_tutorials:img_manip
+-DCATKIN_DEVEL_PREFIX=/home/student/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/student/catkin_ws/install -G Unix Makefiles

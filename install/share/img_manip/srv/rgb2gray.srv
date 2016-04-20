@@ -1,0 +1,3 @@
+sensor_msgs/Image img_rgb
+---
+sensor_msgs/Image img_gray

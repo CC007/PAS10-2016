@@ -1,0 +1,3 @@
+Int32MultiArray img_rgb
+---
+Int32MultiArray img_gray
